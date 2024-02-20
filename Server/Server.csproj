@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F40D042-45EF-4C68-BCC2-E6BF19D12B7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientHandler.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="FrmServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmServer.Designer.cs">
+      <DependentUpon>FrmServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="SystemOperation\IzmeniNastavnikaSO.cs" />
+    <Compile Include="SystemOperation\IzmeniRasporedSO.cs" />
+    <Compile Include="SystemOperation\KreirajNastavnikaSO.cs" />
+    <Compile Include="SystemOperation\KreirajPredavanjeSO.cs" />
+    <Compile Include="SystemOperation\KreirajPredmetSO.cs" />
+    <Compile Include="SystemOperation\KreirajRasporedSO.cs" />
+    <Compile Include="SystemOperation\PrijaviSeSO.cs" />
+    <Compile Include="SystemOperation\ObrisiNastavnikaSO.cs" />
+    <Compile Include="SystemOperation\PretraziNastavnikeSO.cs" />
+    <Compile Include="SystemOperation\PretraziPredmeteSO.cs" />
+    <Compile Include="SystemOperation\SystemOperationBase.cs" />
+    <Compile Include="SystemOperation\VratiPredmeteNastavnikaSO.cs" />
+    <Compile Include="SystemOperation\VratiRasporedeSO.cs" />
+    <Compile Include="SystemOperation\VratiStavkeSO.cs" />
+    <Compile Include="SystemOperation\VratiSveNastavnikeSO.cs" />
+    <Compile Include="SystemOperation\VratiSvePredmeteSO.cs" />
+    <Compile Include="SystemOperation\VratiSveUcioniceSO.cs" />
+    <EmbeddedResource Include="FrmServer.resx">
+      <DependentUpon>FrmServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBBroker\DBBroker.csproj">
+      <Project>{8B7008BE-AF2B-4A41-B103-728E4F63C230}</Project>
+      <Name>DBBroker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Common.csproj">
+      <Project>{CCFDE650-5163-4052-8E7D-B9FFEE92F9BC}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
