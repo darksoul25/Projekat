@@ -115,6 +115,7 @@ namespace Client.UCControls
             // 
             this.btnKreiraj.BackColor = System.Drawing.Color.Black;
             this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnKreiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKreiraj.ForeColor = System.Drawing.Color.White;
             this.btnKreiraj.Location = new System.Drawing.Point(332, 340);
             this.btnKreiraj.Name = "btnKreiraj";

@@ -63,7 +63,7 @@ namespace Client.GUIController
                 return;
             }
             StavkaRasporeda s = (StavkaRasporeda)ucIzmeniRaspored.DgvStavke.SelectedRows[0].DataBoundItem;
-           
+
             if (!ValidacijaZaIzmenuStavke())
             {
                 return;
@@ -76,17 +76,13 @@ namespace Client.GUIController
                 Ucionica = (Ucionica)ucIzmeniRaspored.CmbUcionica.SelectedItem,
                 Predmet = (Predmet)ucIzmeniRaspored.CmbPredmet.SelectedItem,
             };
-            //if (ucIzmeniRaspored.stavke.Contains(stavkaZaProveru))
-            //{
-            //    MessageBox.Show("Stavka sa ovim datumom i vremenom pocetka postoji.");
-            //    return;
-            //}
+
             if (Postoji(stavkaZaProveru))
             {
                 MessageBox.Show("Stavka sa ovim datumom i vremenom pocetka postoji.");
                 return;
             }
-            if (VremenskaRazlikaII(stavkaZaProveru.VremePocetka, stavkaZaProveru.Datum,s.RedniBroj))
+            if (VremenskaRazlikaII(stavkaZaProveru.VremePocetka, stavkaZaProveru.Datum, s.RedniBroj))
             {
                 MessageBox.Show("Vremenska razlika izmedju stavki mora biti bar 35 minuta.");
                 return;
@@ -102,7 +98,7 @@ namespace Client.GUIController
                     st.VremePocetka = TimeSpan.Parse(ucIzmeniRaspored.TxtVremePocetka.Text);
                     st.Ucionica = (Ucionica)ucIzmeniRaspored.CmbUcionica.SelectedItem;
                     st.Predmet = (Predmet)ucIzmeniRaspored.CmbPredmet.SelectedItem;
-                    
+
                 }
             }
             ucIzmeniRaspored.DgvStavke.Refresh();
@@ -112,7 +108,7 @@ namespace Client.GUIController
         public bool Postoji(StavkaRasporeda s)
         {
             int brojac = 0;
-            foreach(StavkaRasporeda stavka in ucIzmeniRaspored.stavke)
+            foreach (StavkaRasporeda stavka in ucIzmeniRaspored.stavke)
             {
                 if (s.Datum == stavka.Datum && s.VremePocetka == stavka.VremePocetka)
                     brojac++;
@@ -148,7 +144,8 @@ namespace Client.GUIController
             }
 
             if (string.IsNullOrEmpty(ucIzmeniRaspored.TxtVremePocetka.Text)
-              || !TimeSpan.TryParse(ucIzmeniRaspored.TxtVremePocetka.Text, out _))
+              || !TimeSpan.TryParse(ucIzmeniRaspored.TxtVremePocetka.Text, out TimeSpan vremePocekta) ||
+              !(vremePocekta >= TimeSpan.FromHours(8) && vremePocekta <= TimeSpan.FromHours(20)))
             {
                 ucIzmeniRaspored.TxtVremePocetka.BackColor = Color.Salmon;
                 kraj = false;
@@ -318,7 +315,7 @@ namespace Client.GUIController
             }
             return false;
         }
-        public bool VremenskaRazlikaII(TimeSpan vremePocetka, DateTime datum,int redniBroj)
+        public bool VremenskaRazlikaII(TimeSpan vremePocetka, DateTime datum, int redniBroj)
         {
             foreach (StavkaRasporeda s in ucIzmeniRaspored.stavke)
             {
@@ -362,7 +359,8 @@ namespace Client.GUIController
             }
 
             if (string.IsNullOrEmpty(ucRasporedNastave.TxtVremePoc.Text)
-              || !TimeSpan.TryParse(ucRasporedNastave.TxtVremePoc.Text, out _))
+              || !TimeSpan.TryParse(ucRasporedNastave.TxtVremePoc.Text, out TimeSpan vremePocetka) ||
+              !(vremePocetka >= TimeSpan.FromHours(8) && vremePocetka <= TimeSpan.FromHours(20)))
             {
                 ucRasporedNastave.TxtVremePoc.BackColor = Color.Salmon;
                 kraj = false;

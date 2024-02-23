@@ -30,6 +30,7 @@ namespace Client.UCControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRasporedNastave));
             this.lblSkolskaGod = new System.Windows.Forms.Label();
             this.lblPolugodiste = new System.Windows.Forms.Label();
@@ -54,10 +55,10 @@ namespace Client.UCControls
             this.dgvStavkeRasporeda = new System.Windows.Forms.DataGridView();
             this.cmbSkolskaGod = new System.Windows.Forms.ComboBox();
             this.lblEror = new System.Windows.Forms.Label();
-            this.lblNapomena = new System.Windows.Forms.Label();
             this.dgvNastavnici = new System.Windows.Forms.DataGridView();
             this.txtSearchNastavnik = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlStavka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRasporeda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNastavnici)).BeginInit();
@@ -111,12 +112,13 @@ namespace Client.UCControls
             // 
             this.btnObrisiRed.BackColor = System.Drawing.Color.Gray;
             this.btnObrisiRed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnObrisiRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrisiRed.ForeColor = System.Drawing.Color.White;
-            this.btnObrisiRed.Location = new System.Drawing.Point(431, 127);
+            this.btnObrisiRed.Location = new System.Drawing.Point(425, 101);
             this.btnObrisiRed.Name = "btnObrisiRed";
-            this.btnObrisiRed.Size = new System.Drawing.Size(107, 23);
+            this.btnObrisiRed.Size = new System.Drawing.Size(113, 49);
             this.btnObrisiRed.TabIndex = 23;
-            this.btnObrisiRed.Text = "Obrisi red";
+            this.btnObrisiRed.Text = "Obrisi stavku/stavke";
             this.btnObrisiRed.UseVisualStyleBackColor = false;
             // 
             // cmbTrajanje
@@ -177,10 +179,11 @@ namespace Client.UCControls
             // 
             this.btnUbaci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnUbaci.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUbaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUbaci.ForeColor = System.Drawing.Color.White;
-            this.btnUbaci.Location = new System.Drawing.Point(431, 32);
+            this.btnUbaci.Location = new System.Drawing.Point(425, 20);
             this.btnUbaci.Name = "btnUbaci";
-            this.btnUbaci.Size = new System.Drawing.Size(103, 37);
+            this.btnUbaci.Size = new System.Drawing.Size(109, 49);
             this.btnUbaci.TabIndex = 15;
             this.btnUbaci.Text = "Ubaci stavku";
             this.btnUbaci.UseVisualStyleBackColor = false;
@@ -214,6 +217,8 @@ namespace Client.UCControls
             this.txtVremePoc.Size = new System.Drawing.Size(104, 22);
             this.txtVremePoc.TabIndex = 11;
             this.txtVremePoc.Text = "hh:mm";
+            this.toolTip1.SetToolTip(this.txtVremePoc, "Vremena pocetaka casova(stavki) za isti dan se moraju \r\nrazlikovati bar 35 minuta" +
+        ", a opseg u kom unosite vreme\r\nje 08:00-20:00.\r\n\r\n\r\n");
             this.txtVremePoc.TextChanged += new System.EventHandler(this.PromenaTeksta);
             // 
             // lblDatum
@@ -234,6 +239,9 @@ namespace Client.UCControls
             this.txtDatum.Size = new System.Drawing.Size(104, 22);
             this.txtDatum.TabIndex = 9;
             this.txtDatum.Text = "dd.MM.yyyy";
+            this.toolTip1.SetToolTip(this.txtDatum, "Ako ste izabrali prvo polugodiste,\r\nopseg u kom unosite datum za stavku rasporeda" +
+        " je:\r\n1.9.yyyy-31.12.yyyy\r\nAko ste izabrali drugo polugoditse opseg je:\r\n20.1.yy" +
+        "yy-20.6.yyyy\r\n\r\n");
             this.txtDatum.TextChanged += new System.EventHandler(this.PromenaTeksta);
             // 
             // lblStavka
@@ -337,19 +345,6 @@ namespace Client.UCControls
             this.lblEror.Size = new System.Drawing.Size(0, 18);
             this.lblEror.TabIndex = 26;
             // 
-            // lblNapomena
-            // 
-            this.lblNapomena.AutoSize = true;
-            this.lblNapomena.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNapomena.ForeColor = System.Drawing.Color.White;
-            this.lblNapomena.Location = new System.Drawing.Point(599, 34);
-            this.lblNapomena.Name = "lblNapomena";
-            this.lblNapomena.Size = new System.Drawing.Size(362, 112);
-            this.lblNapomena.TabIndex = 27;
-            this.lblNapomena.Text = "NAPOMENA\r\nAko ste izabrali prvo polugodiste,\r\nopseg u kom unosite datum za stavku" +
-    " rasporeda je:\r\n1.9.yyyy-31.12.yyyy\r\nAko ste izabrali drugo polugoditse opseg je" +
-    ":\r\n20.1.yyyy-20.6.yyyy\r\n \r\n";
-            // 
             // dgvNastavnici
             // 
             this.dgvNastavnici.AllowUserToAddRows = false;
@@ -382,6 +377,11 @@ namespace Client.UCControls
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipTitle = "Napomena:";
+            // 
             // UCRasporedNastave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,7 +390,6 @@ namespace Client.UCControls
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtSearchNastavnik);
             this.Controls.Add(this.dgvNastavnici);
-            this.Controls.Add(this.lblNapomena);
             this.Controls.Add(this.lblEror);
             this.Controls.Add(this.cmbSkolskaGod);
             this.Controls.Add(this.dgvStavkeRasporeda);
@@ -404,7 +403,7 @@ namespace Client.UCControls
             this.Controls.Add(this.lblSkolskaGod);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "UCRasporedNastave";
-            this.Size = new System.Drawing.Size(961, 675);
+            this.Size = new System.Drawing.Size(697, 675);
             this.pnlStavka.ResumeLayout(false);
             this.pnlStavka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRasporeda)).EndInit();
@@ -439,10 +438,10 @@ namespace Client.UCControls
         private DataGridView dgvStavkeRasporeda;
         private ComboBox cmbSkolskaGod;
         private Label lblEror;
-        private Label lblNapomena;
         private DataGridView dgvNastavnici;
         private TextBox txtSearchNastavnik;
         private PictureBox pictureBox2;
+        private ToolTip toolTip1;
 
         public Label LblSkolskaGod { get => lblSkolskaGod; set => lblSkolskaGod = value; }
         public Label LblPolugodiste { get => lblPolugodiste; set => lblPolugodiste = value; }

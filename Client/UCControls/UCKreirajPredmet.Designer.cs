@@ -93,7 +93,7 @@ namespace Client.UCControls
             this.btnDodaj.ForeColor = System.Drawing.Color.White;
             this.btnDodaj.Location = new System.Drawing.Point(168, 111);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(116, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(124, 31);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;

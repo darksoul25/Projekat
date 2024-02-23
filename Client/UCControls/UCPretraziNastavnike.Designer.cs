@@ -100,7 +100,7 @@ namespace Client.UCControls
             this.lblIme.AutoSize = true;
             this.lblIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIme.ForeColor = System.Drawing.Color.White;
-            this.lblIme.Location = new System.Drawing.Point(3, 280);
+            this.lblIme.Location = new System.Drawing.Point(12, 280);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(36, 16);
             this.lblIme.TabIndex = 8;

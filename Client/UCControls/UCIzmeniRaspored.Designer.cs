@@ -101,12 +101,16 @@ namespace Client.UCControls
             // 
             // btnOtkazi
             // 
+            this.btnOtkazi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOtkazi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOtkazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtkazi.ForeColor = System.Drawing.Color.White;
             this.btnOtkazi.Location = new System.Drawing.Point(225, 166);
             this.btnOtkazi.Name = "btnOtkazi";
             this.btnOtkazi.Size = new System.Drawing.Size(105, 50);
             this.btnOtkazi.TabIndex = 13;
             this.btnOtkazi.Text = "Otkazi";
-            this.btnOtkazi.UseVisualStyleBackColor = true;
+            this.btnOtkazi.UseVisualStyleBackColor = false;
             // 
             // btnPotvrdi
             // 
@@ -124,10 +128,11 @@ namespace Client.UCControls
             // lblUcionica
             // 
             this.lblUcionica.AutoSize = true;
+            this.lblUcionica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUcionica.ForeColor = System.Drawing.Color.White;
             this.lblUcionica.Location = new System.Drawing.Point(247, 83);
             this.lblUcionica.Name = "lblUcionica";
-            this.lblUcionica.Size = new System.Drawing.Size(60, 16);
+            this.lblUcionica.Size = new System.Drawing.Size(68, 16);
             this.lblUcionica.TabIndex = 11;
             this.lblUcionica.Text = "Ucionica";
             // 
@@ -142,10 +147,11 @@ namespace Client.UCControls
             // lblPredmet
             // 
             this.lblPredmet.AutoSize = true;
+            this.lblPredmet.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPredmet.ForeColor = System.Drawing.Color.White;
             this.lblPredmet.Location = new System.Drawing.Point(77, 83);
             this.lblPredmet.Name = "lblPredmet";
-            this.lblPredmet.Size = new System.Drawing.Size(58, 16);
+            this.lblPredmet.Size = new System.Drawing.Size(65, 16);
             this.lblPredmet.TabIndex = 9;
             this.lblPredmet.Text = "Predmet";
             // 
@@ -160,10 +166,11 @@ namespace Client.UCControls
             // lblVremePocetka
             // 
             this.lblVremePocetka.AutoSize = true;
+            this.lblVremePocetka.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVremePocetka.ForeColor = System.Drawing.Color.White;
-            this.lblVremePocetka.Location = new System.Drawing.Point(281, 7);
+            this.lblVremePocetka.Location = new System.Drawing.Point(268, 7);
             this.lblVremePocetka.Name = "lblVremePocetka";
-            this.lblVremePocetka.Size = new System.Drawing.Size(99, 16);
+            this.lblVremePocetka.Size = new System.Drawing.Size(112, 16);
             this.lblVremePocetka.TabIndex = 7;
             this.lblVremePocetka.Text = "Vreme pocetka";
             // 
@@ -178,10 +185,11 @@ namespace Client.UCControls
             // lblDatum
             // 
             this.lblDatum.AutoSize = true;
+            this.lblDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatum.ForeColor = System.Drawing.Color.White;
             this.lblDatum.Location = new System.Drawing.Point(170, 7);
             this.lblDatum.Name = "lblDatum";
-            this.lblDatum.Size = new System.Drawing.Size(46, 16);
+            this.lblDatum.Size = new System.Drawing.Size(51, 16);
             this.lblDatum.TabIndex = 5;
             this.lblDatum.Text = "Datum";
             // 
@@ -196,10 +204,11 @@ namespace Client.UCControls
             // lblTrajanje
             // 
             this.lblTrajanje.AutoSize = true;
+            this.lblTrajanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrajanje.ForeColor = System.Drawing.Color.White;
             this.lblTrajanje.Location = new System.Drawing.Point(31, 5);
             this.lblTrajanje.Name = "lblTrajanje";
-            this.lblTrajanje.Size = new System.Drawing.Size(57, 16);
+            this.lblTrajanje.Size = new System.Drawing.Size(65, 16);
             this.lblTrajanje.TabIndex = 3;
             this.lblTrajanje.Text = "Trajanje";
             // 

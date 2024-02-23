@@ -53,7 +53,7 @@ namespace Client.UCControls
             // 
             this.lblIme.AutoSize = true;
             this.lblIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIme.Location = new System.Drawing.Point(19, 41);
+            this.lblIme.Location = new System.Drawing.Point(35, 41);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(36, 16);
             this.lblIme.TabIndex = 3;
@@ -63,7 +63,7 @@ namespace Client.UCControls
             // 
             this.lblPrezime.AutoSize = true;
             this.lblPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrezime.Location = new System.Drawing.Point(19, 99);
+            this.lblPrezime.Location = new System.Drawing.Point(4, 102);
             this.lblPrezime.Name = "lblPrezime";
             this.lblPrezime.Size = new System.Drawing.Size(67, 16);
             this.lblPrezime.TabIndex = 4;
@@ -73,7 +73,7 @@ namespace Client.UCControls
             // 
             this.lblJMBG.AutoSize = true;
             this.lblJMBG.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJMBG.Location = new System.Drawing.Point(19, 165);
+            this.lblJMBG.Location = new System.Drawing.Point(19, 162);
             this.lblJMBG.Name = "lblJMBG";
             this.lblJMBG.Size = new System.Drawing.Size(52, 16);
             this.lblJMBG.TabIndex = 5;
@@ -83,7 +83,8 @@ namespace Client.UCControls
             // 
             this.btnDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDodaj.Location = new System.Drawing.Point(95, 270);
+            this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodaj.Location = new System.Drawing.Point(111, 271);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 6;
@@ -94,7 +95,7 @@ namespace Client.UCControls
             // 
             this.lblPol.AutoSize = true;
             this.lblPol.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPol.Location = new System.Drawing.Point(21, 212);
+            this.lblPol.Location = new System.Drawing.Point(37, 212);
             this.lblPol.Name = "lblPol";
             this.lblPol.Size = new System.Drawing.Size(34, 16);
             this.lblPol.TabIndex = 9;
@@ -110,7 +111,7 @@ namespace Client.UCControls
             // 
             // txtJMBG
             // 
-            this.txtJMBG.Location = new System.Drawing.Point(95, 162);
+            this.txtJMBG.Location = new System.Drawing.Point(95, 159);
             this.txtJMBG.Name = "txtJMBG";
             this.txtJMBG.Size = new System.Drawing.Size(114, 22);
             this.txtJMBG.TabIndex = 11;
