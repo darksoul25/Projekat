@@ -34,12 +34,12 @@ namespace Client.UCControls
             this.lblVrstaPredmeta = new System.Windows.Forms.Label();
             this.cmbVrstaPred = new System.Windows.Forms.ComboBox();
             this.lblPredmet = new System.Windows.Forms.Label();
-            this.cmbPredmet = new System.Windows.Forms.ComboBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPredmet = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,6 @@ namespace Client.UCControls
             this.cmbVrstaPred.Name = "cmbVrstaPred";
             this.cmbVrstaPred.Size = new System.Drawing.Size(131, 24);
             this.cmbVrstaPred.TabIndex = 1;
-            this.cmbVrstaPred.SelectedIndexChanged += new System.EventHandler(this.cmbVrstaPred_SelectedIndexChanged);
             // 
             // lblPredmet
             // 
@@ -75,15 +74,6 @@ namespace Client.UCControls
             this.lblPredmet.Size = new System.Drawing.Size(81, 19);
             this.lblPredmet.TabIndex = 2;
             this.lblPredmet.Text = "Predmet:";
-            // 
-            // cmbPredmet
-            // 
-            this.cmbPredmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPredmet.FormattingEnabled = true;
-            this.cmbPredmet.Location = new System.Drawing.Point(262, 52);
-            this.cmbPredmet.Name = "cmbPredmet";
-            this.cmbPredmet.Size = new System.Drawing.Size(131, 24);
-            this.cmbPredmet.TabIndex = 3;
             // 
             // btnDodaj
             // 
@@ -141,17 +131,25 @@ namespace Client.UCControls
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // txtPredmet
+            // 
+            this.txtPredmet.Location = new System.Drawing.Point(261, 54);
+            this.txtPredmet.Name = "txtPredmet";
+            this.txtPredmet.Size = new System.Drawing.Size(120, 22);
+            this.txtPredmet.TabIndex = 9;
+            this.txtPredmet.TextChanged += new System.EventHandler(this.txtPredmet_TextChanged);
+            // 
             // UCKreirajPredmet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txtPredmet);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.cmbPredmet);
             this.Controls.Add(this.lblPredmet);
             this.Controls.Add(this.cmbVrstaPred);
             this.Controls.Add(this.lblVrstaPredmeta);
@@ -169,21 +167,22 @@ namespace Client.UCControls
         private System.Windows.Forms.Label lblVrstaPredmeta;
         private System.Windows.Forms.ComboBox cmbVrstaPred;
         private System.Windows.Forms.Label lblPredmet;
-        private System.Windows.Forms.ComboBox cmbPredmet;
         private System.Windows.Forms.Button btnDodaj;
         private DataGridView dgvSearch;
         private TextBox txtSearch;
         private ComboBox cmbSearch;
         private PictureBox pictureBox1;
+        private TextBox txtPredmet;
 
         public Label LblVrstaPredmeta { get => lblVrstaPredmeta; set => lblVrstaPredmeta = value; }
         public ComboBox CmbVrstaPred { get => cmbVrstaPred; set => cmbVrstaPred = value; }
         public Label LblPredmet { get => lblPredmet; set => lblPredmet = value; }
-        public ComboBox CmbPredmet { get => cmbPredmet; set => cmbPredmet = value; }
+      
         public Button BtnDodaj { get => btnDodaj; set => btnDodaj = value; }
         public DataGridView DgvSearch { get => dgvSearch; set => dgvSearch = value; }
         public TextBox TxtSearch { get => txtSearch; set => txtSearch = value; }
         public ComboBox CmbSearch { get => cmbSearch; set => cmbSearch = value; }
         public PictureBox PictureBox1 { get => pictureBox1; set => pictureBox1 = value; }
+        public TextBox TxtPredmet { get => txtPredmet; set => txtPredmet = value; }
     }
 }

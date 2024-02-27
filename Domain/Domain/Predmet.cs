@@ -47,15 +47,6 @@ namespace Common
             return $"{NazivPredmeta}";
         }
     }
-    
-
-    public enum Jezici { Srpski, Engleski, Francuski, Nemacki }
-    public enum PrirodneNauke { Fizika, Biologija, Hemija }
-    public enum DrustveneNauke { Istorija, Geografija }
-    public enum Matematicki { Matematika }
-    public enum Tehnicki { Tehnicko, Informatika }
-    public enum Izborni { Veronauka, Gradjanksko }
-    public enum Umetnicki { Likovno, Muzicko, Fizicko }
 
     public enum VrstaPredmeta
     {

@@ -46,38 +46,7 @@ namespace Client.UCControls
             dgvSearch.Columns["ColName"].Visible = false;
         }
 
-        private void cmbVrstaPred_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string izabrano = ((ComboBox)sender).SelectedItem?.ToString();
-            switch (izabrano)
-            {
-                case "Jezici":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(Jezici));
-                    break;
-                case "PrirodneNauke":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(PrirodneNauke));
-                    break;
-                case "DrustveneNauke":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(DrustveneNauke));
-                    break;
-                case "Tehnicki":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(Tehnicki));
-                    break;
-                case "Umetnicki":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(Umetnicki));
-                    break;
-                case "Matematicki":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(Matematicki));
-                    break;
-                case "Izborni":
-                    cmbPredmet.DataSource = Enum.GetValues(typeof(Izborni));
-                    break;
-
-            }
-            cmbPredmet.SelectedIndex = 0;
-            
-            
-        }
+        
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -93,6 +62,11 @@ namespace Client.UCControls
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtPredmet_TextChanged(object sender, EventArgs e)
+        {
+            txtPredmet.BackColor=Color.White;
         }
     }
 }
