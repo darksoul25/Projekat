@@ -98,6 +98,7 @@ namespace Client.UCControls
             this.dgvSearch.ReadOnly = true;
             this.dgvSearch.RowHeadersWidth = 51;
             this.dgvSearch.RowTemplate.Height = 24;
+            this.dgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearch.Size = new System.Drawing.Size(411, 190);
             this.dgvSearch.TabIndex = 5;
             // 

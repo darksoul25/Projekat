@@ -53,6 +53,7 @@ namespace Client.GUIController
                         };
                         PrijavljeniAdmin = Communication.Instance.Login(a);
                         frmLogin.DialogResult = DialogResult.OK;
+                        MessageBox.Show("Uspesno ste se prijavili!");
                         
                     }
                 }

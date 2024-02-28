@@ -72,13 +72,13 @@ namespace Server
                         if (response.Result == null)
                         {
                             response.IsSuccessful = false;
-                            response.Message = "Korisnik ne postoji!";
+                            response.Message = "Sistem ne moze da pronadje direktora na osnovu unetih podataka.";
                             break;
                         }
                         if (Postoji((Administrator)response.Result))
                         {
                             response.IsSuccessful = false;
-                            response.Message = "Korisnik je ulogovan.";
+                            response.Message = "Neuspesna prijava, korisnik je vec ulogovan.";
                         }
                         else
                         {

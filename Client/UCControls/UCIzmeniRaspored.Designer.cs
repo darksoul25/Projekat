@@ -64,6 +64,7 @@ namespace Client.UCControls
             this.dgvRaspored.ReadOnly = true;
             this.dgvRaspored.RowHeadersWidth = 51;
             this.dgvRaspored.RowTemplate.Height = 24;
+            this.dgvRaspored.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRaspored.Size = new System.Drawing.Size(372, 150);
             this.dgvRaspored.TabIndex = 0;
             this.dgvRaspored.SelectionChanged += new System.EventHandler(this.dgvRaspored_SelectionChanged);
@@ -237,6 +238,7 @@ namespace Client.UCControls
             this.dgvStavke.ReadOnly = true;
             this.dgvStavke.RowHeadersWidth = 51;
             this.dgvStavke.RowTemplate.Height = 24;
+            this.dgvStavke.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStavke.Size = new System.Drawing.Size(406, 150);
             this.dgvStavke.TabIndex = 4;
             this.dgvStavke.SelectionChanged += new System.EventHandler(this.dgvStavke_SelectionChanged);

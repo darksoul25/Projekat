@@ -36,6 +36,7 @@ namespace Server
             btnPokreni.Enabled = false;
             btnZaustavi.Enabled = true;
             lblPoruka.Text = "Server je pokrenut.";
+            lblPoruka.ForeColor = Color.Green;
 
         }
 
@@ -45,6 +46,8 @@ namespace Server
             btnPokreni.Enabled = true;
             btnZaustavi.Enabled = false;
             lblPoruka.Text = "Server je zaustavljen.";
+            lblPoruka.ForeColor = Color.Red;
+
 
         }
     }

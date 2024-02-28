@@ -50,6 +50,7 @@ namespace Client.GUIController
                     selektovaniNastavnik.Prezime = uCPretrazi.TxtPrezime.Text;
                     selektovaniNastavnik.Pol = (Pol)Enum.Parse(typeof(Pol), uCPretrazi.CmbPol.SelectedItem.ToString());
                     Communication.Instance.IzmeniNastavnika(selektovaniNastavnik);
+                    MessageBox.Show("Sistem je zapamtio nastavnika.");
                     uCPretrazi.DgvNastavnici.Refresh();
                     uCPretrazi.InitData();
                     PostaviVrednosti();
@@ -99,6 +100,7 @@ namespace Client.GUIController
             uCPretrazi.CmbPol.DataSource = Enum.GetValues(typeof(Pol));
             uCPretrazi.CmbPol.SelectedItem= selektovaniNastavnik.Pol;
             uCPretrazi.BtnSacuvaj.Enabled=true;
+            MessageBox.Show("Sistem je ucitao nastavnika.");
 
         }
 
@@ -117,13 +119,14 @@ namespace Client.GUIController
                 uCPretrazi.nastavnici.Remove(selektovaniNastavnik);
                 uCPretrazi.DgvNastavnici.Refresh();
                 
-                MessageBox.Show("Uspesno ste obrisali nastavnika!");
+                MessageBox.Show("Sistem je obrisao podatke o nastavniku.");
                 PostaviVrednosti();
 
             }
             catch (SystemOperationException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Sistem ne moze da izbrise podatke o nastavniku.");
             }
         }
 
@@ -142,7 +145,7 @@ namespace Client.GUIController
                     };
                     Communication.Instance.DodajNastavnika(n);
 
-                    MessageBox.Show("Uspesno ste dodali nastavnika.");
+                    MessageBox.Show("Sistem je kreirao nastavnika.");
                 }
             }
             catch (SystemOperationException ex)

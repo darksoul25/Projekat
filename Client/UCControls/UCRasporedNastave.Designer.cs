@@ -355,6 +355,7 @@ namespace Client.UCControls
             this.dgvNastavnici.Name = "dgvNastavnici";
             this.dgvNastavnici.ReadOnly = true;
             this.dgvNastavnici.RowHeadersWidth = 51;
+            this.dgvNastavnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNastavnici.Size = new System.Drawing.Size(309, 130);
             this.dgvNastavnici.TabIndex = 28;
             this.dgvNastavnici.SelectionChanged += new System.EventHandler(this.dgvNastavnici_SelectionChanged);

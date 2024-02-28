@@ -61,6 +61,7 @@ namespace Client.UCControls
             this.dgvNastavnici.ReadOnly = true;
             this.dgvNastavnici.RowHeadersWidth = 51;
             this.dgvNastavnici.RowTemplate.Height = 24;
+            this.dgvNastavnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNastavnici.Size = new System.Drawing.Size(356, 150);
             this.dgvNastavnici.TabIndex = 0;
             this.dgvNastavnici.SelectionChanged += new System.EventHandler(this.dgvNastavnici_SelectionChanged);
@@ -75,6 +76,7 @@ namespace Client.UCControls
             this.dgvPredmet.Name = "dgvPredmet";
             this.dgvPredmet.ReadOnly = true;
             this.dgvPredmet.RowHeadersWidth = 51;
+            this.dgvPredmet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPredmet.Size = new System.Drawing.Size(315, 150);
             this.dgvPredmet.TabIndex = 1;
             this.dgvPredmet.SelectionChanged += new System.EventHandler(this.dgvPredmet_SelectionChanged);
