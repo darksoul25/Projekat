@@ -4,6 +4,7 @@ using Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Client.GUIController
     {
         private UCRasporedNastave ucRasporedNastave;
         private UCIzmeniRaspored ucIzmeniRaspored;
-
+        private Dictionary<int, StavkaRasporeda> stavke = new Dictionary<int, StavkaRasporeda>();
 
         public Control PrikaziRasporedNastave()
         {
@@ -36,7 +37,27 @@ namespace Client.GUIController
             ucIzmeniRaspored = new UCIzmeniRaspored();
             ucIzmeniRaspored.BtnPotvrdi.Click += IzmeniStavku;
             ucIzmeniRaspored.BtnSacuvaj.Click += SacuvajIzmene;
+            ucIzmeniRaspored.BtnOtkazi.Click += OtkaziIzmenu;
             return ucIzmeniRaspored;
+        }
+
+        private void OtkaziIzmenu(object sender, EventArgs e)
+        {
+            foreach(StavkaRasporeda sr in ucIzmeniRaspored.stavke)
+            {
+                if (stavke.ContainsKey(sr.RedniBroj))
+                {
+                    sr.Ucionica = stavke[sr.RedniBroj].Ucionica;
+                    sr.Trajanje = stavke[sr.RedniBroj].Trajanje; 
+                    sr.Datum = stavke[sr.RedniBroj].Datum;
+                    sr.VremePocetka = stavke[sr.RedniBroj].VremePocetka;
+                    sr.Ucionica = stavke[sr.RedniBroj].Ucionica;
+                    sr.Predmet = stavke[sr.RedniBroj].Predmet;
+                }
+            }
+            ucIzmeniRaspored.DgvStavke.Refresh();
+            ucIzmeniRaspored.BtnSacuvaj.Enabled = false;
+            ucIzmeniRaspored.BtnOtkazi.Enabled = false;
         }
 
         private void SacuvajIzmene(object sender, EventArgs e)
@@ -47,6 +68,7 @@ namespace Client.GUIController
                 r.StavkeRasporeda = ucIzmeniRaspored.stavke.ToList();
                 Communication.Instance.IzmeniRaspored(r);
                 MessageBox.Show("Raspored je uspesno izmenjen.");
+                ucIzmeniRaspored.BtnSacuvaj.Enabled=false;
             }
             catch (SystemOperationException ex)
             {
@@ -87,7 +109,16 @@ namespace Client.GUIController
                 MessageBox.Show("Vremenska razlika izmedju stavki mora biti bar 35 minuta.");
                 return;
             }
-
+            //dodavanje u recnik u slucaju da hocemo da otkazemo izmene
+            
+            stavke[s.RedniBroj] = new StavkaRasporeda() 
+            {
+                Trajanje = s.Trajanje,
+                Datum = s.Datum,
+                VremePocetka = s.VremePocetka,
+                Ucionica = s.Ucionica,
+                Predmet = s.Predmet,
+            };
             foreach (StavkaRasporeda st in ucIzmeniRaspored.stavke)
             {
                 if (st.RedniBroj == s.RedniBroj)
@@ -103,6 +134,7 @@ namespace Client.GUIController
             }
             ucIzmeniRaspored.DgvStavke.Refresh();
             ucIzmeniRaspored.BtnSacuvaj.Enabled = true;
+            ucIzmeniRaspored.BtnOtkazi.Enabled = true;
         }
 
         public bool Postoji(StavkaRasporeda s)

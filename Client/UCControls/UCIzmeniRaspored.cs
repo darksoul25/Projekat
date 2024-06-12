@@ -44,9 +44,10 @@ namespace Client.UCControls
         private void dgvRaspored_SelectionChanged(object sender, EventArgs e)
         {
             btnSacuvaj.Enabled = false;
-            txtDatum.Text = "";
-            txtVremePocetka.Text = "";
-            pnlIzmena.Enabled = false;
+            btnOtkazi.Enabled = false;
+            //txtDatum.Text = "";
+            //txtVremePocetka.Text = "";
+            //pnlIzmena.Enabled = false;
             dgvStavke.Enabled = true;
             if (dgvRaspored.SelectedRows.Count > 0)
             {
@@ -68,19 +69,24 @@ namespace Client.UCControls
 
         private void dgvStavke_SelectionChanged(object sender, EventArgs e)
         {
-            btnSacuvaj.Enabled = false;
+            //btnSacuvaj.Enabled = false;
+            //btnOtkazi.Enabled = false;
             pnlIzmena.Enabled = true;
             cmbTrajanje.SelectedIndex = 0;
             cmbUcionica.DataSource = Communication.Instance.VratiSveUcionice();
             cmbUcionica.SelectedIndex = 0;
+            
             if (dgvStavke.SelectedRows.Count > 0)
             {
                 txtDatum.Text = dgvStavke.SelectedRows[0].Cells["Datum"].Value.ToString().Substring(0,10);
                 txtVremePocetka.Text = dgvStavke.SelectedRows[0].Cells["VremePocetka"].Value.ToString().Substring(0,5);
-            }
+                cmbUcionica.Text = dgvStavke.SelectedRows[0].Cells["Ucionica"].Value.ToString();
+                cmbTrajanje.Text = dgvStavke.SelectedRows[0].Cells["Trajanje"].Value.ToString();
             RasporedNastave r = (RasporedNastave)dgvRaspored.SelectedRows[0].DataBoundItem;
             cmbPredmet.DataSource = Communication.Instance.VratiPredmeteNastavnika(r.Nastavnik);
-            cmbPredmet.SelectedIndex = 0;
+              cmbPredmet.Text = dgvStavke.SelectedRows[0].Cells["Predmet"].Value.ToString();
+
+            }
 
         }
 
