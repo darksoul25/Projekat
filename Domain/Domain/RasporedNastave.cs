@@ -13,22 +13,14 @@ namespace Common
     {
         public int IDRasporeda { get; set; }
         public string SkolskaGodina { get; set; }
-        
         public Polugodiste Polugodiste { get; set; }
-
         public Nastavnik Nastavnik { get; set; }
         public List<StavkaRasporeda> StavkeRasporeda { get; set; }
-
         public string TableName => "RasporedNastave";
-
         public string Values => $"'{SkolskaGodina}','{Polugodiste.ToString()}','{Nastavnik.JMBG}'";
-
         public string ColName => $"IDRasporeda";
-
         public string Condition => $"idrasporeda = {IDRasporeda}";
-
         public string UpdateValues => throw new NotImplementedException();
-
         public List<IEntity> GetReaderList(SqlDataReader reader)
         {
             List<IEntity> list = new List<IEntity> ();

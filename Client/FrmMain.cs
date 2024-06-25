@@ -68,12 +68,13 @@ namespace Client
             }
             catch (ServerCommunicationException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Server je pao.");
+                Debug.WriteLine(ex.Message);
             }
 
             catch (IOException ex)
             {
-               Debug.WriteLine(">>>>FormCloes event>>>>"+ex.Message);
+               Debug.WriteLine(">>>>FormClose event>>>>"+ex.Message);
             }
         }
 

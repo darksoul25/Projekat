@@ -13,18 +13,11 @@ namespace Common
     {
         public int BrojUcionice { get; set; }
         public int Kapacitet { get; set; }
-       
-
         public string TableName => "Ucionica";
-
         public string Values => $"{BrojUcionice},{Kapacitet}";
-
         public string ColName => throw new NotImplementedException();
-
         public string Condition => throw new NotImplementedException();
-
         public string UpdateValues => throw new NotImplementedException();
-
         public override string ToString()
         {
             return $"{BrojUcionice}";

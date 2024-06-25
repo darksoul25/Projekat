@@ -68,5 +68,32 @@ namespace Client.UCControls
         {
             txtPredmet.BackColor=Color.White;
         }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    string text = txtSearch.Text;
+                    string colName = cmbSearch.SelectedItem.ToString();
+                    string[] niz = { text, colName };
+                    List<Predmet> b = Communication.Instance.VratiSveKojiPocinjuSaPredmet(niz);
+                    if(b.Count > 0)
+                    {
+                        MessageBox.Show("Sistem je nasao predmete po zadatoj vrednosti.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sistem ne moze da nadje predmete po zadatoj vrednosti.");
+                    }
+                    InitDgv(b);
+                }
+                catch (SystemOperationException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

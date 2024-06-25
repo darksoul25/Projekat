@@ -18,22 +18,15 @@ namespace Common
         public int IDRasporeda { get; set; }
         public Ucionica Ucionica { get; set; }
         public Predmet Predmet { get; set; }
-
         public string TableName => "StavkaRasporeda";
-
         public string Values => $"{IDRasporeda},{RedniBroj},{Trajanje},'{Datum.ToString("yyyyMMdd")}','{VremePocetka.ToString("hh\\:mm")}','{Predmet.NazivPredmeta}',{Ucionica.BrojUcionice}";
-
         public string ColName => $"RedniBroj";
-
         public string Condition => $"idrasporeda={IDRasporeda} and rednibroj={RedniBroj}";
-
         public string UpdateValues => $"trajanjeminuti={Trajanje},datum='{Datum.ToString("yyyyMMdd")}',vremepocetka='{VremePocetka.ToString("hh\\:mm")}',nazivpredmeta='{Predmet.NazivPredmeta}',brojucionice={Ucionica.BrojUcionice}";
-
         public override bool Equals(object obj)
         {
             return obj is StavkaRasporeda r && r.Datum==Datum && r.VremePocetka==VremePocetka;
         }
-
         public List<IEntity> GetReaderList(SqlDataReader reader)
         {
 

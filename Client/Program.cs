@@ -31,7 +31,8 @@ namespace Client
 
                     if (result == DialogResult.OK)
                     {
-                        MainCoordinator.Instance.ShowFrmMain();
+                         MainCoordinator.Instance.ShowFrmMain();
+                        
                     }
                     if (result == DialogResult.Cancel)
                     {

@@ -54,6 +54,7 @@ namespace Client.UCControls
             dgvNastavnici.Columns["ColName"].Visible = false;
             dgvNastavnici.Columns["Condition"].Visible = false;
             dgvNastavnici.Columns["UpdateValues"].Visible = false;
+            
 
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -64,6 +65,9 @@ namespace Client.UCControls
                 string colName = cmbColName.SelectedItem.ToString();
                 string[] niz = { text, colName };
                 List<Nastavnik> b = Communication.Instance.VratiSveKojiPocinjuSa(niz);
+                //if(b.Count == 0) {
+                //    MessageBox.Show("Sistem ne moze da nadje nastavnike po zadatoj vrednosti.");
+                //}
                 InitDgv(b);
             }
             catch (SystemOperationException ex)
@@ -76,6 +80,33 @@ namespace Client.UCControls
         private void PromenaTeksta(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = Color.White;
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                try
+                {
+                    string text = txtSearch.Text;
+                    string colName = cmbColName.SelectedItem.ToString();
+                    string[] niz = { text, colName };
+                    List<Nastavnik> b = Communication.Instance.VratiSveKojiPocinjuSa(niz);
+                    if (b.Count == 0)
+                    {
+                        MessageBox.Show("Sistem ne moze da nadje nastavnike po zadatoj vrednosti.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sistem je pronasao nastavnike po zadatoj vrednosti.");
+                    }
+                    InitDgv(b);
+                }
+                catch (SystemOperationException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

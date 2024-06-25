@@ -12,18 +12,12 @@ namespace Common
     [Serializable]
     public class Nastavnik:IEntity
     {
-        
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string JMBG { get; set; }
         public Pol Pol { get; set; }
-
         public string TableName => $"Nastavnik";
-
         public string Values => $"'{JMBG}', '{Ime}', '{Prezime}','{Pol.ToString()}'";
-
-        
-
         public string ColName => "JMBG";
 
         public string Condition => $"jmbg='{JMBG}'";
@@ -34,7 +28,6 @@ namespace Common
         {
             return $"{Ime} {Prezime}";
         }
-
         List<IEntity> IEntity.GetReaderList(SqlDataReader reader)
         {
             List<IEntity> lista = new List<IEntity>();
@@ -53,9 +46,5 @@ namespace Common
             }
             return lista;
         }
-    }
-    public enum Pol
-    {
-        Musko,Zensko
     }
 }

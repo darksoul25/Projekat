@@ -48,9 +48,11 @@
     <Compile Include="Domain\Administrator.cs" />
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\Nastavnik.cs" />
+    <Compile Include="Domain\Pol.cs" />
     <Compile Include="Domain\Predavanje.cs" />
     <Compile Include="Domain\Polugodiste.cs" />
     <Compile Include="Domain\Predmet.cs" />
+    <Compile Include="Domain\VrstaPredmeta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\RasporedNastave.cs" />
     <Compile Include="Domain\StavkaRasporeda.cs" />

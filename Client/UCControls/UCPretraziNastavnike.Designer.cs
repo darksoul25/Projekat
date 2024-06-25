@@ -55,6 +55,7 @@ namespace Client.UCControls
             this.txtSearch.Size = new System.Drawing.Size(306, 22);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // dgvNastavnici
             // 

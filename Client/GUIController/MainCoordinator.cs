@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Client.GUIController
 {
@@ -42,7 +43,7 @@ namespace Client.GUIController
         {
             frmMain = new FrmMain();
             frmMain.AutoSize = true;
-            frmMain.ShowDialog();
+             frmMain.ShowDialog();
             
         }
 

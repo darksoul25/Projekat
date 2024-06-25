@@ -21,6 +21,7 @@ namespace Client.GUIController
         {
             ucDodajNastavnika = new UCDodajNastavnika();
             ucDodajNastavnika.BtnDodaj.Click += Dodaj;
+
             return ucDodajNastavnika;
         }
         public Control PrikaziPretraziNastavnika()
@@ -56,6 +57,10 @@ namespace Client.GUIController
                     PostaviVrednosti();
                     
                 }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da zapamti nastavnika.");
+                }
             }
             catch (SystemOperationException ex)
             {
@@ -71,11 +76,13 @@ namespace Client.GUIController
             bool valid = true;
             if (string.IsNullOrEmpty(ime)|| char.IsLower(ime[0])|| !ime.All(char.IsLetter))
             {
+                uCPretrazi.TxtIme.Text = "Prvo veliko slovo.";
                 uCPretrazi.TxtIme.BackColor = Color.Salmon;
                 valid = false;
             }
             if (string.IsNullOrEmpty(prezime) || char.IsLower(prezime[0]) || !prezime.All(char.IsLetter))
             {
+                uCPretrazi.TxtPrezime.Text = "Prvo veliko slovo.";
                 uCPretrazi.TxtPrezime.BackColor = Color.Salmon;
                 valid = false;
             }
@@ -147,6 +154,11 @@ namespace Client.GUIController
 
                     MessageBox.Show("Sistem je kreirao nastavnika.");
                 }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da kreira nastavnika.");
+
+                }
             }
             catch (SystemOperationException ex)
             {
@@ -163,11 +175,13 @@ namespace Client.GUIController
             string prezime = ucDodajNastavnika.TxtPrezime.Text;
             if (string.IsNullOrEmpty(ime) || char.IsLower(ime[0])|| !ime.All(char.IsLetter))
             {
+                ucDodajNastavnika.TxtIme.Text = "Prvo veliko slovo.";
                 ucDodajNastavnika.TxtIme.BackColor = Color.Salmon;
                 valid = false;
             }
             if (string.IsNullOrEmpty(prezime) || char.IsLower(prezime[0]) || !prezime.All(char.IsLetter))
             {
+                ucDodajNastavnika.TxtPrezime.Text = "Prvo veliko slovo.";
                 ucDodajNastavnika.TxtPrezime.BackColor = Color.Salmon;
                 valid = false;
             }

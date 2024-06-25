@@ -57,6 +57,7 @@ namespace Server
                 soket.Shutdown(SocketShutdown.Both);
                 soket.Close();
                 soket = null;
+                UlogovanUser = null;
             }
         }
 
