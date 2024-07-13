@@ -58,7 +58,7 @@
             this.lblPoruka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPoruka.AutoSize = true;
             this.lblPoruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoruka.Location = new System.Drawing.Point(294, 200);
+            this.lblPoruka.Location = new System.Drawing.Point(268, 171);
             this.lblPoruka.Name = "lblPoruka";
             this.lblPoruka.Size = new System.Drawing.Size(0, 20);
             this.lblPoruka.TabIndex = 2;

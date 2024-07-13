@@ -46,6 +46,7 @@ namespace Client
             }
         }
 
+       
         public void Close()
         {
             if(soket== null) return;
@@ -182,6 +183,13 @@ namespace Client
             SendRequest(Operation.IzmeniRaspored, r);
 
             GetResult();
+        }
+
+        internal List<Ucionica> VratiUcioniceNastavnika(Nastavnik n)
+        {
+            SendRequest(Operation.VratiUcioniceNastavnika,n);
+
+            return (List<Ucionica>)GetResult();
         }
     }
 }

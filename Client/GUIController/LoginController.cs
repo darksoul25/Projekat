@@ -48,7 +48,7 @@ namespace Client.GUIController
                     {
                         Administrator a = new Administrator()
                         {
-                            KoricnikoIme = frmLogin.TxtUsername.Text,
+                            KorisnickoIme = frmLogin.TxtUsername.Text,
                             Lozinka = frmLogin.TxtPassword.Text,
                         };
                         PrijavljeniAdmin = Communication.Instance.Login(a);

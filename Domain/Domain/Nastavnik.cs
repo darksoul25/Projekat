@@ -20,6 +20,8 @@ namespace Common
         public string Values => $"'{JMBG}', '{Ime}', '{Prezime}','{Pol.ToString()}'";
         public string ColName => "JMBG";
 
+       
+
         public string Condition => $"jmbg='{JMBG}'";
 
         public string UpdateValues => $"Ime = '{Ime}',Prezime='{Prezime}',JMBG='{JMBG}',Pol='{Pol.ToString()}'";

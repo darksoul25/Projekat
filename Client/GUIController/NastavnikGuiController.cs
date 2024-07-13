@@ -99,6 +99,9 @@ namespace Client.GUIController
                 return;
             }
             selektovaniNastavnik = (Nastavnik)uCPretrazi.DgvNastavnici.SelectedRows[0].DataBoundItem;
+            
+
+              
             uCPretrazi.TxtIme.Enabled = true;
             uCPretrazi.TxtIme.Text = selektovaniNastavnik.Ime;
             uCPretrazi.TxtPrezime.Enabled = true;
@@ -107,8 +110,29 @@ namespace Client.GUIController
             uCPretrazi.CmbPol.DataSource = Enum.GetValues(typeof(Pol));
             uCPretrazi.CmbPol.SelectedItem= selektovaniNastavnik.Pol;
             uCPretrazi.BtnSacuvaj.Enabled=true;
+            //uCPretrazi.CmbUcionice.SelectedIndex = -1;
+            //List<Ucionica> ucionice = Communication.Instance.VratiUcioniceNastavnika(selektovaniNastavnik);
+            //uCPretrazi.CmbUcionice.DataSource = vratiBezPonavljanja(ucionice);
             MessageBox.Show("Sistem je ucitao nastavnika.");
 
+        }
+
+        private List<Ucionica> vratiBezPonavljanja(List<Ucionica> ucionice)
+        {
+            List<Ucionica> uc = new List<Ucionica>();
+
+            foreach(Ucionica u in ucionice)
+            {
+                if (uc.Contains(u))
+                {
+                    continue;
+                }
+                else
+                {
+                    uc.Add(u);
+                }
+            }
+            return uc;
         }
 
         public void Obrisi(object sender,EventArgs e)

@@ -42,19 +42,37 @@ namespace DBBroker
 
         #endregion
 
-        public Administrator Login(Administrator a)
+        //public Administrator Login(Administrator a)
+        //{
+        //    SqlCommand command = connection.CreateCommand();
+        //    command.CommandText = $"select * from administrator a where a.KorisnickoIme = '{a.KorisnickoIme}' and a.Lozinka='{a.Lozinka}'";
+        //    using (SqlDataReader reader = command.ExecuteReader())
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            a.Ime = reader["Ime"].ToString();
+        //            a.Prezime = reader["Prezime"].ToString();
+        //            return a;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        public IEntity LoginII (IEntity obj)
         {
             SqlCommand command = connection.CreateCommand();
-            command.CommandText = $"select * from administrator a where a.KorisnickoIme = '{a.KoricnikoIme}' and a.Lozinka='{a.Lozinka}'";
-            using (SqlDataReader reader = command.ExecuteReader())
+            command.CommandText = $"select * from {obj.TableName} a where {obj.Condition}";
+            using(SqlDataReader reader = command.ExecuteReader())
             {
-                while (reader.Read())
-                {
-                    a.Ime = reader["Ime"].ToString();
-                    a.Prezime = reader["Prezime"].ToString();
-                    return a;
-                }
+                
+                    List<IEntity> resList = obj.GetReaderList(reader);
+                    if(resList.Count > 0)
+                    {
+                        return resList[0];
+                    }
+                
             }
+            command.Dispose();
             return null;
         }
 

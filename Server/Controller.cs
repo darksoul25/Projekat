@@ -40,6 +40,7 @@ namespace Server
             loginSO.ExecuteTemplate();
             return loginSO.Result;
         }
+        
 
         public void KreirajNastavnika(Nastavnik n)
         {
@@ -147,5 +148,12 @@ namespace Server
             IzmeniRasporedSO so = new IzmeniRasporedSO(argument);
             so.ExecuteTemplate() ;
         }
+
+        //internal List<Ucionica> VratiUcioniceNastavnika(Nastavnik n)
+        //{
+        //   VratiUcioniceNastavnikaSO so = new VratiUcioniceNastavnikaSO(n);
+        //    so.ExecuteTemplate() ; 
+        //    return so.Result.OfType<Ucionica>().ToList();
+        //}
     }
 }

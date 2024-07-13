@@ -12,7 +12,9 @@
         VratiPredmeteNastavnika,
         VratiRasporede,
         VratiStavke,
-        IzmeniRaspored
+        IzmeniRaspored,
+        VratiUcioniceNastavnika,
+        ServerPao
     }
 
 }

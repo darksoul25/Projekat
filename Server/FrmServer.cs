@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +19,28 @@ namespace Server
         {
             InitializeComponent();
             InitData();
+
         }
+
+        
 
         private void InitData()
         {
             btnPokreni.Enabled = true;
             btnZaustavi.Enabled = false;
-        }
+           
 
+        }
+        private List<Administrator> vratiOnlineAdministratore()
+        {
+            List<Administrator> lista = new List<Administrator>();
+            foreach(ClientHandler client in Server.clients)
+            {
+                if(client.UlogovanUser!=null)
+                lista.Add(client.UlogovanUser);
+            }
+            return lista;
+        }
         private void btnPokreni_Click(object sender, EventArgs e)
         {
             server = new Server();
@@ -35,6 +50,7 @@ namespace Server
             nit.Start();
             btnPokreni.Enabled = false;
             btnZaustavi.Enabled = true;
+
             lblPoruka.Text = "Server je pokrenut.";
             lblPoruka.ForeColor = Color.Green;
 
@@ -45,10 +61,14 @@ namespace Server
             server.Stop();
             btnPokreni.Enabled = true;
             btnZaustavi.Enabled = false;
+            
+
             lblPoruka.Text = "Server je zaustavljen.";
             lblPoruka.ForeColor = Color.Red;
 
 
         }
+
+       
     }
 }

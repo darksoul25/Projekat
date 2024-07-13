@@ -23,6 +23,8 @@ namespace Common
             return $"{BrojUcionice}";
         }
 
+        
+
         public List<IEntity> GetReaderList(SqlDataReader reader)
         {
             List<IEntity> lista = new List<IEntity>();
@@ -31,12 +33,18 @@ namespace Common
                 Ucionica u = new Ucionica
                 {
 
-                    BrojUcionice = (int)reader["BrojUcionice"],
-                    Kapacitet = (int)reader["Kapacitet"]
+                    BrojUcionice = (int)reader[0],
+                    //Kapacitet = (int)reader["Kapacitet"]
                 };
                 lista.Add(u);
             }
             return lista;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Ucionica ucionica &&
+                   BrojUcionice == ucionica.BrojUcionice;
         }
     }
 }

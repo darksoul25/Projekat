@@ -22,6 +22,7 @@ namespace Client.UCControls
         private void promenateksta(object sender, EventArgs args)
         {
             ((TextBox)sender).BackColor = Color.White;
+            
         }
 
        

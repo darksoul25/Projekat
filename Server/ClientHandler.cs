@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Configuration;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,7 @@ namespace Server
         {
             if (soket != null)
             {
+
                 kraj = true;
                 soket.Shutdown(SocketShutdown.Both);
                 soket.Close();
@@ -91,7 +93,7 @@ namespace Server
                         response.Message = "Kraj";
                         IzbaciIzListe(UlogovanUser);
                         break;
-               
+
                     case Operation.KreirajNastavnika:
                         Controller.Instance.KreirajNastavnika((Nastavnik)request.Argument);
                         break;
@@ -157,16 +159,25 @@ namespace Server
                     case Operation.IzmeniRaspored:
                         Controller.Instance.IzmeniRaspored((RasporedNastave)request.Argument);
                         break;
-
+                    case Operation.OdjaviSe:
+                        break;
+                    //case Operation.VratiUcioniceNastavnika:
+                    //    response.Result = Controller.Instance.VratiUcioniceNastavnika((Nastavnik)request.Argument);
+                    //    if (response.Result == null)
+                    //    {
+                    //        response.IsSuccessful = false;
+                    //        response.Message = "Ne mozemo da vratimo sve ucionice!";
+                    //    }
+                    //    break;
                 }
             }
             catch (SqlException ex)
             {
                 response.IsSuccessful = false;
-                response.Message=ex.Message;
-                foreach(SqlError error in ex.Errors)
-                {          
-                    switch(error.Number) 
+                response.Message = ex.Message;
+                foreach (SqlError error in ex.Errors)
+                {
+                    switch (error.Number)
                     {
                         case 2627:
                             response.Message = "Došlo je do greške prilikom pokušaja dodavanja novog podatka. Uneseni podatak već postoji u bazi podataka i ne može se ponovo uneti.";
@@ -190,9 +201,9 @@ namespace Server
 
         private void IzbaciIzListe(Administrator ulogovanUser)
         {
-            foreach(ClientHandler c in Server.clients)
+            foreach (ClientHandler c in Server.clients)
             {
-                if(c.UlogovanUser?.KoricnikoIme == ulogovanUser.KoricnikoIme && c.UlogovanUser?.Lozinka == ulogovanUser.Lozinka)
+                if (c.UlogovanUser?.KorisnickoIme == ulogovanUser.KorisnickoIme && c.UlogovanUser?.Lozinka == ulogovanUser.Lozinka)
                 {
                     Server.clients.Remove(c);
                 }
@@ -201,10 +212,10 @@ namespace Server
 
         private bool Postoji(Administrator a)
         {
-          
-            foreach(ClientHandler c in Server.clients)
+
+            foreach (ClientHandler c in Server.clients)
             {
-                if(c.UlogovanUser?.KoricnikoIme==a?.KoricnikoIme && c.UlogovanUser?.Lozinka==a?.Lozinka)
+                if (c.UlogovanUser?.KorisnickoIme == a?.KorisnickoIme && c.UlogovanUser?.Lozinka == a?.Lozinka)
                 {
                     return true;
                 }

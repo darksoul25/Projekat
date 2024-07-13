@@ -173,7 +173,7 @@ namespace Client.UCControls
             this.btnSacuvaj.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSacuvaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacuvaj.Location = new System.Drawing.Point(91, 422);
+            this.btnSacuvaj.Location = new System.Drawing.Point(93, 434);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(85, 31);
             this.btnSacuvaj.TabIndex = 15;
@@ -209,7 +209,7 @@ namespace Client.UCControls
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UCPretraziNastavnike";
-            this.Size = new System.Drawing.Size(665, 481);
+            this.Size = new System.Drawing.Size(656, 580);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNastavnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -248,5 +248,7 @@ namespace Client.UCControls
         public Button BtnIzmeni { get => btnIzmeni; set => btnIzmeni = value; }
         public ComboBox CmbColName { get => cmbColName; set => cmbColName = value; }
         public Button BtnSacuvaj { get => btnSacuvaj; set => btnSacuvaj = value; }
+        public Button BtnSacuvaj1 { get => btnSacuvaj; set => btnSacuvaj = value; }
+        //public ComboBox CmbUcionice { get => cmbUcionice; set => cmbUcionice = value; }
     }
 }

@@ -30,24 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.pnlSideMenu = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnOdjaviSe = new System.Windows.Forms.Button();
             this.pnlSubMenuRaspored = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.btnRaspored = new System.Windows.Forms.Button();
             this.pnlSubMenuPredmet = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnKreirajPredmet = new System.Windows.Forms.Button();
+            this.btnPredmet = new System.Windows.Forms.Button();
             this.pnlSubMenuNastavnik = new System.Windows.Forms.Panel();
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnNastavnik = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pBoxAdmin = new System.Windows.Forms.PictureBox();
             this.lblPrijavljen = new System.Windows.Forms.Label();
             this.pnlGlavni = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnOdjaviSe = new System.Windows.Forms.Button();
-            this.btnRaspored = new System.Windows.Forms.Button();
-            this.btnPredmet = new System.Windows.Forms.Button();
-            this.btnNastavnik = new System.Windows.Forms.Button();
-            this.pBoxAdmin = new System.Windows.Forms.PictureBox();
             this.pnlSideMenu.SuspendLayout();
             this.pnlSubMenuRaspored.SuspendLayout();
             this.pnlSubMenuPredmet.SuspendLayout();
@@ -72,8 +72,44 @@
             this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(196, 564);
+            this.pnlSideMenu.Size = new System.Drawing.Size(196, 606);
             this.pnlSideMenu.TabIndex = 2;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHome.Location = new System.Drawing.Point(0, 519);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(175, 45);
+            this.btnHome.TabIndex = 7;
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnOdjaviSe
+            // 
+            this.btnOdjaviSe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOdjaviSe.BackgroundImage")));
+            this.btnOdjaviSe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOdjaviSe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnOdjaviSe.FlatAppearance.BorderSize = 0;
+            this.btnOdjaviSe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnOdjaviSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdjaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOdjaviSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnOdjaviSe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOdjaviSe.Location = new System.Drawing.Point(0, 564);
+            this.btnOdjaviSe.Name = "btnOdjaviSe";
+            this.btnOdjaviSe.Size = new System.Drawing.Size(175, 45);
+            this.btnOdjaviSe.TabIndex = 6;
+            this.btnOdjaviSe.UseVisualStyleBackColor = true;
+            this.btnOdjaviSe.Click += new System.EventHandler(this.btnOdjaviSe_Click);
             // 
             // pnlSubMenuRaspored
             // 
@@ -118,6 +154,23 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btnRaspored
+            // 
+            this.btnRaspored.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRaspored.BackgroundImage")));
+            this.btnRaspored.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRaspored.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRaspored.FlatAppearance.BorderSize = 0;
+            this.btnRaspored.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnRaspored.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaspored.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRaspored.Location = new System.Drawing.Point(0, 379);
+            this.btnRaspored.Name = "btnRaspored";
+            this.btnRaspored.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnRaspored.Size = new System.Drawing.Size(175, 45);
+            this.btnRaspored.TabIndex = 5;
+            this.btnRaspored.UseVisualStyleBackColor = true;
+            this.btnRaspored.Click += new System.EventHandler(this.btnRaspored_Click);
+            // 
             // pnlSubMenuPredmet
             // 
             this.pnlSubMenuPredmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -160,6 +213,23 @@
             this.btnKreirajPredmet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKreirajPredmet.UseVisualStyleBackColor = true;
             this.btnKreirajPredmet.Click += new System.EventHandler(this.btnKreirajPredmet_Click);
+            // 
+            // btnPredmet
+            // 
+            this.btnPredmet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPredmet.BackgroundImage")));
+            this.btnPredmet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPredmet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPredmet.FlatAppearance.BorderSize = 0;
+            this.btnPredmet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPredmet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPredmet.Location = new System.Drawing.Point(0, 239);
+            this.btnPredmet.Name = "btnPredmet";
+            this.btnPredmet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPredmet.Size = new System.Drawing.Size(175, 45);
+            this.btnPredmet.TabIndex = 4;
+            this.btnPredmet.UseVisualStyleBackColor = true;
+            this.btnPredmet.Click += new System.EventHandler(this.btnPredmet_Click);
             // 
             // pnlSubMenuNastavnik
             // 
@@ -204,6 +274,24 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // btnNastavnik
+            // 
+            this.btnNastavnik.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNastavnik.BackgroundImage")));
+            this.btnNastavnik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNastavnik.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNastavnik.FlatAppearance.BorderSize = 0;
+            this.btnNastavnik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnNastavnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNastavnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNastavnik.Location = new System.Drawing.Point(0, 100);
+            this.btnNastavnik.Name = "btnNastavnik";
+            this.btnNastavnik.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnNastavnik.Size = new System.Drawing.Size(175, 45);
+            this.btnNastavnik.TabIndex = 3;
+            this.btnNastavnik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNastavnik.UseVisualStyleBackColor = true;
+            this.btnNastavnik.Click += new System.EventHandler(this.btnNastavnik_Click);
+            // 
             // pnlLogo
             // 
             this.pnlLogo.Controls.Add(this.pBoxAdmin);
@@ -213,6 +301,16 @@
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(175, 100);
             this.pnlLogo.TabIndex = 3;
+            // 
+            // pBoxAdmin
+            // 
+            this.pBoxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pBoxAdmin.Image")));
+            this.pBoxAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pBoxAdmin.Name = "pBoxAdmin";
+            this.pBoxAdmin.Size = new System.Drawing.Size(67, 55);
+            this.pBoxAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBoxAdmin.TabIndex = 9;
+            this.pBoxAdmin.TabStop = false;
             // 
             // lblPrijavljen
             // 
@@ -232,112 +330,14 @@
             this.pnlGlavni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGlavni.Location = new System.Drawing.Point(196, 0);
             this.pnlGlavni.Name = "pnlGlavni";
-            this.pnlGlavni.Size = new System.Drawing.Size(877, 564);
+            this.pnlGlavni.Size = new System.Drawing.Size(903, 606);
             this.pnlGlavni.TabIndex = 3;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHome.Location = new System.Drawing.Point(0, 519);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(175, 45);
-            this.btnHome.TabIndex = 7;
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnOdjaviSe
-            // 
-            this.btnOdjaviSe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOdjaviSe.BackgroundImage")));
-            this.btnOdjaviSe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnOdjaviSe.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnOdjaviSe.FlatAppearance.BorderSize = 0;
-            this.btnOdjaviSe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnOdjaviSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdjaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOdjaviSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnOdjaviSe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOdjaviSe.Location = new System.Drawing.Point(0, 564);
-            this.btnOdjaviSe.Name = "btnOdjaviSe";
-            this.btnOdjaviSe.Size = new System.Drawing.Size(175, 45);
-            this.btnOdjaviSe.TabIndex = 6;
-            this.btnOdjaviSe.UseVisualStyleBackColor = true;
-            this.btnOdjaviSe.Click += new System.EventHandler(this.btnOdjaviSe_Click);
-            // 
-            // btnRaspored
-            // 
-            this.btnRaspored.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRaspored.BackgroundImage")));
-            this.btnRaspored.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRaspored.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRaspored.FlatAppearance.BorderSize = 0;
-            this.btnRaspored.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnRaspored.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaspored.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRaspored.Location = new System.Drawing.Point(0, 379);
-            this.btnRaspored.Name = "btnRaspored";
-            this.btnRaspored.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnRaspored.Size = new System.Drawing.Size(175, 45);
-            this.btnRaspored.TabIndex = 5;
-            this.btnRaspored.UseVisualStyleBackColor = true;
-            this.btnRaspored.Click += new System.EventHandler(this.btnRaspored_Click);
-            // 
-            // btnPredmet
-            // 
-            this.btnPredmet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPredmet.BackgroundImage")));
-            this.btnPredmet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPredmet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPredmet.FlatAppearance.BorderSize = 0;
-            this.btnPredmet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPredmet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPredmet.Location = new System.Drawing.Point(0, 239);
-            this.btnPredmet.Name = "btnPredmet";
-            this.btnPredmet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPredmet.Size = new System.Drawing.Size(175, 45);
-            this.btnPredmet.TabIndex = 4;
-            this.btnPredmet.UseVisualStyleBackColor = true;
-            this.btnPredmet.Click += new System.EventHandler(this.btnPredmet_Click);
-            // 
-            // btnNastavnik
-            // 
-            this.btnNastavnik.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNastavnik.BackgroundImage")));
-            this.btnNastavnik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNastavnik.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNastavnik.FlatAppearance.BorderSize = 0;
-            this.btnNastavnik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnNastavnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNastavnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNastavnik.Location = new System.Drawing.Point(0, 100);
-            this.btnNastavnik.Name = "btnNastavnik";
-            this.btnNastavnik.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNastavnik.Size = new System.Drawing.Size(175, 45);
-            this.btnNastavnik.TabIndex = 3;
-            this.btnNastavnik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNastavnik.UseVisualStyleBackColor = true;
-            this.btnNastavnik.Click += new System.EventHandler(this.btnNastavnik_Click);
-            // 
-            // pBoxAdmin
-            // 
-            this.pBoxAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pBoxAdmin.Image")));
-            this.pBoxAdmin.Location = new System.Drawing.Point(0, 0);
-            this.pBoxAdmin.Name = "pBoxAdmin";
-            this.pBoxAdmin.Size = new System.Drawing.Size(67, 55);
-            this.pBoxAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBoxAdmin.TabIndex = 9;
-            this.pBoxAdmin.TabStop = false;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 564);
+            this.ClientSize = new System.Drawing.Size(1099, 606);
             this.Controls.Add(this.pnlGlavni);
             this.Controls.Add(this.pnlSideMenu);
             this.Name = "FrmMain";

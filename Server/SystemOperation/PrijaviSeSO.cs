@@ -15,9 +15,11 @@ namespace Server.SystemOperation
         {
             this.a = a;
         }
+
+
         protected override void ExecuteConcreteOperation()
         {
-            Result = broker.Login(a);
+            Result = broker.LoginII(a) as Administrator;
         }
     }
 }
