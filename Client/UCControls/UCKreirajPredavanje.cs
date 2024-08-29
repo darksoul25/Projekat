@@ -72,23 +72,7 @@ namespace Client.UCControls
             }
         }
 
-        private void txtSearchPredmet_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string text = txtSearchPredmet.Text;
-                string colName = "NazivPredmeta";
-                string[] niz = { text, colName };
-                List<Predmet> b = Communication.Instance.VratiSveKojiPocinjuSaPredmet(niz);
-               
-                InitDgvPredmet(b);
-
-            }
-            catch (SystemOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+     
 
         private void dgvNastavnici_SelectionChanged(object sender, EventArgs e)
         {
@@ -110,5 +94,7 @@ namespace Client.UCControls
                 txtPredmet.Text = selectedRow.Cells["NazivPredmeta"].Value.ToString();
             }
         }
+
+        
     }
 }

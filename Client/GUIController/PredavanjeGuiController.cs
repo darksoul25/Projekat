@@ -37,7 +37,7 @@ namespace Client.GUIController
                     Iskustvo = uCKreirajPredavanje.CmbIskustvo.SelectedItem.ToString()
                 };
                 Communication.Instance.KreirajPredavanje(p);
-                MessageBox.Show("Uspesno kreirano predavanje.");
+                MessageBox.Show("Sistem je zapamtio predavanje.");
             }
             catch (SystemOperationException ex)
             {

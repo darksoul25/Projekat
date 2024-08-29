@@ -130,14 +130,14 @@ namespace Server
                             response.Message = "Ne mozemo da vratimo sve predmete!";
                         }
                         break;
-                    case Operation.VratiSvePredmeteSearch:
-                        response.Result = Controller.Instance.VratiSvePredmeteSearch((string[])request.Argument);
-                        if (response.Result == null)
-                        {
-                            response.IsSuccessful = false;
-                            response.Message = "Ne mozemo da vratimo sve predmete(Search)!";
-                        }
-                        break;
+                    //case Operation.VratiSvePredmeteSearch:
+                    //    response.Result = Controller.Instance.VratiSvePredmeteSearch((string[])request.Argument);
+                    //    if (response.Result == null)
+                    //    {
+                    //        response.IsSuccessful = false;
+                    //        response.Message = "Ne mozemo da vratimo sve predmete(Search)!";
+                    //    }
+                    //    break;
                     case Operation.VratiSveUcionice:
                         response.Result = Controller.Instance.VratiSveUcionice();
                         break;
@@ -153,13 +153,22 @@ namespace Server
                     case Operation.VratiRasporede:
                         response.Result = Controller.Instance.VratiRasporede();
                         break;
-                    case Operation.VratiStavke:
-                        response.Result = Controller.Instance.VratiStavke((RasporedNastave)request.Argument);
-                        break;
+
                     case Operation.IzmeniRaspored:
                         Controller.Instance.IzmeniRaspored((RasporedNastave)request.Argument);
                         break;
                     case Operation.OdjaviSe:
+                        break;
+
+                    case Operation.ServerPao:
+                        break;
+                    case Operation.VratiRasporedeSearch:
+                        response.Result = Controller.Instance.VratiRasporedeSearch((string[])request.Argument);
+                        if (response.Result == null)
+                        {
+                            response.IsSuccessful = false;
+                            response.Message = "Ne mozemo da vratimo sve rasporede(Search)!";
+                        }
                         break;
                     //case Operation.VratiUcioniceNastavnika:
                     //    response.Result = Controller.Instance.VratiUcioniceNastavnika((Nastavnik)request.Argument);
@@ -169,6 +178,9 @@ namespace Server
                     //        response.Message = "Ne mozemo da vratimo sve ucionice!";
                     //    }
                     //    break;
+                        //case Operation.VratiRasporedeNastavnika:
+                        //    response.Result = Controller.Instance.VratiRasporedeNastavnika((Nastavnik)request.Argument);
+                        //    break;
                 }
             }
             catch (SqlException ex)

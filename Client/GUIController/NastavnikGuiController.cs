@@ -3,6 +3,7 @@ using Client.UCControls;
 using Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
@@ -92,6 +93,8 @@ namespace Client.GUIController
 
         private void Izmeni(object sender, EventArgs e)
         {
+            try
+            {
 
             if (uCPretrazi.DgvNastavnici.SelectedRows.Count == 0)
             {
@@ -110,10 +113,27 @@ namespace Client.GUIController
             uCPretrazi.CmbPol.DataSource = Enum.GetValues(typeof(Pol));
             uCPretrazi.CmbPol.SelectedItem= selektovaniNastavnik.Pol;
             uCPretrazi.BtnSacuvaj.Enabled=true;
-            //uCPretrazi.CmbUcionice.SelectedIndex = -1;
-            //List<Ucionica> ucionice = Communication.Instance.VratiUcioniceNastavnika(selektovaniNastavnik);
-            //uCPretrazi.CmbUcionice.DataSource = vratiBezPonavljanja(ucionice);
-            MessageBox.Show("Sistem je ucitao nastavnika.");
+
+                //List<RasporedNastave> rasporedi = Communication.Instance.VratiRasporedeNastavnika(selektovaniNastavnik);
+                //uCPretrazi.DgvRasporedi.DataSource = new BindingList<RasporedNastave>(rasporedi);
+                //    uCPretrazi.DgvRasporedi.Columns["TableName"].Visible = false;
+                //    uCPretrazi.DgvRasporedi.Columns["Values"].Visible = false;
+                //    uCPretrazi.DgvRasporedi.Columns["ColName"].Visible = false;
+                //    uCPretrazi.DgvRasporedi.Columns["Condition"].Visible = false;
+                //    uCPretrazi.DgvRasporedi.Columns["UpdateValues"].Visible = false;
+                //    uCPretrazi.DgvRasporedi.Columns["IDRasporeda"].Visible = false;
+
+
+                //uCPretrazi.CmbUcionice.SelectedIndex = -1;
+                //List<Ucionica> ucionice = Communication.Instance.VratiUcioniceNastavnika(selektovaniNastavnik);
+                //uCPretrazi.CmbUcionice.DataSource = vratiBezPonavljanja(ucionice);
+            }
+            catch (SystemOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
 
         }
 

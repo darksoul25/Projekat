@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Server.SystemOperation
 {
-    internal class KreirajRasporedSO : SystemOperationBase
+    internal class ZapamtiRasporedSO : SystemOperationBase
     {
         private RasporedNastave raspored;
-        public KreirajRasporedSO(RasporedNastave r)
+        public ZapamtiRasporedSO(RasporedNastave r)
         {
             raspored = r;
         }

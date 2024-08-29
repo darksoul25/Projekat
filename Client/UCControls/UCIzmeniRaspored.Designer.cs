@@ -30,6 +30,7 @@ namespace Client.UCControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCIzmeniRaspored));
             this.dgvRaspored = new System.Windows.Forms.DataGridView();
             this.lblSelektuj = new System.Windows.Forms.Label();
             this.pnlIzmena = new System.Windows.Forms.Panel();
@@ -48,9 +49,12 @@ namespace Client.UCControls
             this.dgvStavke = new System.Windows.Forms.DataGridView();
             this.lbl2 = new System.Windows.Forms.Label();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).BeginInit();
             this.pnlIzmena.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRaspored
@@ -58,7 +62,7 @@ namespace Client.UCControls
             this.dgvRaspored.AllowUserToAddRows = false;
             this.dgvRaspored.AllowUserToDeleteRows = false;
             this.dgvRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRaspored.Location = new System.Drawing.Point(3, 42);
+            this.dgvRaspored.Location = new System.Drawing.Point(6, 60);
             this.dgvRaspored.MultiSelect = false;
             this.dgvRaspored.Name = "dgvRaspored";
             this.dgvRaspored.ReadOnly = true;
@@ -74,7 +78,7 @@ namespace Client.UCControls
             this.lblSelektuj.AutoSize = true;
             this.lblSelektuj.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelektuj.ForeColor = System.Drawing.Color.White;
-            this.lblSelektuj.Location = new System.Drawing.Point(3, 22);
+            this.lblSelektuj.Location = new System.Drawing.Point(3, 0);
             this.lblSelektuj.Name = "lblSelektuj";
             this.lblSelektuj.Size = new System.Drawing.Size(184, 17);
             this.lblSelektuj.TabIndex = 1;
@@ -232,7 +236,7 @@ namespace Client.UCControls
             this.dgvStavke.AllowUserToDeleteRows = false;
             this.dgvStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavke.Enabled = false;
-            this.dgvStavke.Location = new System.Drawing.Point(393, 42);
+            this.dgvStavke.Location = new System.Drawing.Point(402, 60);
             this.dgvStavke.MultiSelect = false;
             this.dgvStavke.Name = "dgvStavke";
             this.dgvStavke.ReadOnly = true;
@@ -248,7 +252,7 @@ namespace Client.UCControls
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.White;
-            this.lbl2.Location = new System.Drawing.Point(400, 22);
+            this.lbl2.Location = new System.Drawing.Point(399, 19);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(167, 17);
             this.lbl2.TabIndex = 5;
@@ -268,11 +272,31 @@ namespace Client.UCControls
             this.btnSacuvaj.Text = "Sacuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(54, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(226, 22);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // UCIzmeniRaspored
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.dgvStavke);
@@ -285,6 +309,7 @@ namespace Client.UCControls
             this.pnlIzmena.ResumeLayout(false);
             this.pnlIzmena.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +335,8 @@ namespace Client.UCControls
         private System.Windows.Forms.Button btnOtkazi;
         private System.Windows.Forms.Button btnPotvrdi;
         private Button btnSacuvaj;
+        private TextBox textBox1;
+        private PictureBox pictureBox1;
 
         public DataGridView DgvRaspored { get => dgvRaspored; set => dgvRaspored = value; }
         public Label LblSelektuj { get => lblSelektuj; set => lblSelektuj = value; }

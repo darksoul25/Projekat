@@ -34,7 +34,6 @@ namespace Client.UCControls
             this.dgvNastavnici = new System.Windows.Forms.DataGridView();
             this.dgvPredmet = new System.Windows.Forms.DataGridView();
             this.txtSearchNastavnik = new System.Windows.Forms.TextBox();
-            this.txtSearchPredmet = new System.Windows.Forms.TextBox();
             this.txtNastavnik = new System.Windows.Forms.TextBox();
             this.txtPredmet = new System.Windows.Forms.TextBox();
             this.btnKreiraj = new System.Windows.Forms.Button();
@@ -43,11 +42,10 @@ namespace Client.UCControls
             this.cmbIskustvo = new System.Windows.Forms.ComboBox();
             this.lblIskustvo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblSelektuj = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNastavnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNastavnici
@@ -62,7 +60,7 @@ namespace Client.UCControls
             this.dgvNastavnici.RowHeadersWidth = 51;
             this.dgvNastavnici.RowTemplate.Height = 24;
             this.dgvNastavnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNastavnici.Size = new System.Drawing.Size(356, 150);
+            this.dgvNastavnici.Size = new System.Drawing.Size(378, 150);
             this.dgvNastavnici.TabIndex = 0;
             this.dgvNastavnici.SelectionChanged += new System.EventHandler(this.dgvNastavnici_SelectionChanged);
             // 
@@ -77,7 +75,7 @@ namespace Client.UCControls
             this.dgvPredmet.ReadOnly = true;
             this.dgvPredmet.RowHeadersWidth = 51;
             this.dgvPredmet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPredmet.Size = new System.Drawing.Size(315, 150);
+            this.dgvPredmet.Size = new System.Drawing.Size(375, 150);
             this.dgvPredmet.TabIndex = 1;
             this.dgvPredmet.SelectionChanged += new System.EventHandler(this.dgvPredmet_SelectionChanged);
             // 
@@ -88,14 +86,6 @@ namespace Client.UCControls
             this.txtSearchNastavnik.Size = new System.Drawing.Size(184, 22);
             this.txtSearchNastavnik.TabIndex = 2;
             this.txtSearchNastavnik.TextChanged += new System.EventHandler(this.txtSearchNastavnik_TextChanged);
-            // 
-            // txtSearchPredmet
-            // 
-            this.txtSearchPredmet.Location = new System.Drawing.Point(468, 22);
-            this.txtSearchPredmet.Name = "txtSearchPredmet";
-            this.txtSearchPredmet.Size = new System.Drawing.Size(177, 22);
-            this.txtSearchPredmet.TabIndex = 3;
-            this.txtSearchPredmet.TextChanged += new System.EventHandler(this.txtSearchPredmet_TextChanged);
             // 
             // txtNastavnik
             // 
@@ -182,22 +172,23 @@ namespace Client.UCControls
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // lblSelektuj
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(411, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.lblSelektuj.AutoSize = true;
+            this.lblSelektuj.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelektuj.ForeColor = System.Drawing.Color.White;
+            this.lblSelektuj.Location = new System.Drawing.Point(406, 22);
+            this.lblSelektuj.Name = "lblSelektuj";
+            this.lblSelektuj.Size = new System.Drawing.Size(180, 17);
+            this.lblSelektuj.TabIndex = 13;
+            this.lblSelektuj.Text = "Izaberi(selektuj) predmet";
             // 
             // UCKreirajPredavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lblSelektuj);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblIskustvo);
             this.Controls.Add(this.cmbIskustvo);
@@ -206,16 +197,14 @@ namespace Client.UCControls
             this.Controls.Add(this.btnKreiraj);
             this.Controls.Add(this.txtPredmet);
             this.Controls.Add(this.txtNastavnik);
-            this.Controls.Add(this.txtSearchPredmet);
             this.Controls.Add(this.txtSearchNastavnik);
             this.Controls.Add(this.dgvPredmet);
             this.Controls.Add(this.dgvNastavnici);
             this.Name = "UCKreirajPredavanje";
-            this.Size = new System.Drawing.Size(738, 396);
+            this.Size = new System.Drawing.Size(861, 396);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNastavnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPredmet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +215,6 @@ namespace Client.UCControls
         private System.Windows.Forms.DataGridView dgvNastavnici;
         private System.Windows.Forms.DataGridView dgvPredmet;
         private System.Windows.Forms.TextBox txtSearchNastavnik;
-        private System.Windows.Forms.TextBox txtSearchPredmet;
         private System.Windows.Forms.TextBox txtNastavnik;
         private System.Windows.Forms.TextBox txtPredmet;
         private System.Windows.Forms.Button btnKreiraj;
@@ -235,12 +223,12 @@ namespace Client.UCControls
         private ComboBox cmbIskustvo;
         private Label lblIskustvo;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private Label lblSelektuj;
 
         public DataGridView DgvNastavnici { get => dgvNastavnici; set => dgvNastavnici = value; }
         public DataGridView DgvPredmet { get => dgvPredmet; set => dgvPredmet = value; }
         public TextBox TxtSearchNastavnik { get => txtSearchNastavnik; set => txtSearchNastavnik = value; }
-        public TextBox TxtSearchPredmet { get => txtSearchPredmet; set => txtSearchPredmet = value; }
+      
         public TextBox TxtNastavnik { get => txtNastavnik; set => txtNastavnik = value; }
         public TextBox TxtPredmet { get => txtPredmet; set => txtPredmet = value; }
         public Button BtnKreiraj { get => btnKreiraj; set => btnKreiraj = value; }

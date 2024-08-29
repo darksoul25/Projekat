@@ -301,6 +301,7 @@ namespace Client.GUIController
             }
             if (ValidacijaStavke())
             {
+                
                 StavkaRasporeda stavka = new StavkaRasporeda
                 {
                     RedniBroj = ucRasporedNastave.stavkeRasporeda.Count + 1,
@@ -373,6 +374,7 @@ namespace Client.GUIController
             {
                 case Polugodiste.Prvo:
                     minimalniDatum = new DateTime(minGod, 9, 1);
+                    
                     maxDatum = new DateTime(minGod, 12, 31);
                     break;
                 case Polugodiste.Drugo:

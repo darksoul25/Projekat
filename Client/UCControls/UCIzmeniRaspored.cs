@@ -45,22 +45,24 @@ namespace Client.UCControls
         {
             btnSacuvaj.Enabled = false;
             btnOtkazi.Enabled = false;
-            //txtDatum.Text = "";
-            //txtVremePocetka.Text = "";
-            //pnlIzmena.Enabled = false;
             dgvStavke.Enabled = true;
             if (dgvRaspored.SelectedRows.Count > 0)
             {
                 RasporedNastave r = (RasporedNastave)dgvRaspored.SelectedRows[0].DataBoundItem;
-                stavke = new BindingList<StavkaRasporeda>(Communication.Instance.VratiStavke(r));
-                dgvStavke.DataSource = stavke;
+                //stavke = new BindingList<StavkaRasporeda>(Communication.Instance.VratiStavke(r));
+                if (r.StavkeRasporeda != null)
+                {
+                    stavke = new BindingList<StavkaRasporeda>(r.StavkeRasporeda);
+                    dgvStavke.DataSource = stavke;
 
-                dgvStavke.Columns["TableName"].Visible = false;
-                dgvStavke.Columns["Values"].Visible = false;
-                dgvStavke.Columns["ColName"].Visible = false;
-                dgvStavke.Columns["IDRasporeda"].Visible = false;
-                dgvStavke.Columns["Condition"].Visible = false;
-                dgvStavke.Columns["UpdateValues"].Visible = false;
+                    dgvStavke.Columns["TableName"].Visible = false;
+                    dgvStavke.Columns["Values"].Visible = false;
+                    dgvStavke.Columns["ColName"].Visible = false;
+                    dgvStavke.Columns["IDRasporeda"].Visible = false;
+                    dgvStavke.Columns["Condition"].Visible = false;
+                    dgvStavke.Columns["UpdateValues"].Visible = false;
+
+                }
 
 
             }
@@ -75,16 +77,16 @@ namespace Client.UCControls
             cmbTrajanje.SelectedIndex = 0;
             cmbUcionica.DataSource = Communication.Instance.VratiSveUcionice();
             cmbUcionica.SelectedIndex = 0;
-            
+
             if (dgvStavke.SelectedRows.Count > 0)
             {
-                txtDatum.Text = dgvStavke.SelectedRows[0].Cells["Datum"].Value.ToString().Substring(0,10);
-                txtVremePocetka.Text = dgvStavke.SelectedRows[0].Cells["VremePocetka"].Value.ToString().Substring(0,5);
+                txtDatum.Text = dgvStavke.SelectedRows[0].Cells["Datum"].Value.ToString().Substring(0, 10);
+                txtVremePocetka.Text = dgvStavke.SelectedRows[0].Cells["VremePocetka"].Value.ToString().Substring(0, 5);
                 cmbUcionica.Text = dgvStavke.SelectedRows[0].Cells["Ucionica"].Value.ToString();
                 cmbTrajanje.Text = dgvStavke.SelectedRows[0].Cells["Trajanje"].Value.ToString();
-            RasporedNastave r = (RasporedNastave)dgvRaspored.SelectedRows[0].DataBoundItem;
-            cmbPredmet.DataSource = Communication.Instance.VratiPredmeteNastavnika(r.Nastavnik);
-              cmbPredmet.Text = dgvStavke.SelectedRows[0].Cells["Predmet"].Value.ToString();
+                RasporedNastave r = (RasporedNastave)dgvRaspored.SelectedRows[0].DataBoundItem;
+                cmbPredmet.DataSource = Communication.Instance.VratiPredmeteNastavnika(r.Nastavnik);
+                cmbPredmet.Text = dgvStavke.SelectedRows[0].Cells["Predmet"].Value.ToString();
 
             }
 
@@ -93,6 +95,37 @@ namespace Client.UCControls
         private void PromenaTeksta(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = Color.White;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string text = textBox1.Text;
+                string colName = "SkolskaGodina";
+                string[] niz = { text, colName };
+                List<RasporedNastave> b = Communication.Instance.VratiSveKojiPocinjuSaRaspored(niz);
+
+                InitDgvRasporedi(b);
+
+            }
+            catch (SystemOperationException ex)
+            {
+                MessageBox.Show(ex.Message + "aaa");
+            }
+        }
+
+        private void InitDgvRasporedi(List<RasporedNastave> b)
+        {
+            dgvRaspored.DataSource = new BindingList<RasporedNastave>(b);
+            dgvRaspored.Refresh();
+            dgvRaspored.Columns["TableName"].Visible = false;
+            dgvRaspored.Columns["Values"].Visible = false;
+            dgvRaspored.Columns["ColName"].Visible = false;
+            dgvRaspored.Columns["IDRasporeda"].Visible = false;
+            dgvRaspored.Columns["Condition"].Visible = false;
+            dgvRaspored.Columns["UpdateValues"].Visible = false;
+
         }
     }
 }

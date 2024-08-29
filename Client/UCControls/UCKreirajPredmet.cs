@@ -26,7 +26,7 @@ namespace Client.UCControls
             
             cmbVrstaPred.DataSource = Enum.GetValues(typeof(VrstaPredmeta));
             cmbVrstaPred.SelectedIndex = 0;
-            cmbSearch.SelectedIndex = 0;
+            
             
             
             InitDgv(Communication.Instance.VratiSvePredmete());
@@ -48,52 +48,13 @@ namespace Client.UCControls
 
         
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string text = txtSearch.Text;
-                string colName = cmbSearch.SelectedItem.ToString();
-                string[] niz = { text, colName };
-                List<Predmet> b = Communication.Instance.VratiSveKojiPocinjuSaPredmet(niz);
-                InitDgv(b);
-            }
-            catch (SystemOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void txtPredmet_TextChanged(object sender, EventArgs e)
         {
             txtPredmet.BackColor=Color.White;
         }
 
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                try
-                {
-                    string text = txtSearch.Text;
-                    string colName = cmbSearch.SelectedItem.ToString();
-                    string[] niz = { text, colName };
-                    List<Predmet> b = Communication.Instance.VratiSveKojiPocinjuSaPredmet(niz);
-                    if(b.Count > 0)
-                    {
-                        MessageBox.Show("Sistem je nasao predmete po zadatoj vrednosti.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sistem ne moze da nadje predmete po zadatoj vrednosti.");
-                    }
-                    InitDgv(b);
-                }
-                catch (SystemOperationException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+        
     }
 }

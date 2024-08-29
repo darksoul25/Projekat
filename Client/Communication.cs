@@ -110,6 +110,12 @@ namespace Client
             return (List<Nastavnik>)GetResult();
         }
 
+        internal List<RasporedNastave> VratiSveKojiPocinjuSaRaspored(string[] niz)
+        {
+            SendRequest(Operation.VratiRasporedeSearch, niz);
+            return (List<RasporedNastave>)GetResult();
+        }
+
         internal void ObrisiNastavnika(Nastavnik n)
         {
             SendRequest(Operation.ObrisiNastavnika, n);
@@ -135,11 +141,7 @@ namespace Client
             return (List<Predmet>)GetResult();
         }
 
-        internal List<Predmet> VratiSveKojiPocinjuSaPredmet(string[] niz)
-        {
-            SendRequest(Operation.VratiSvePredmeteSearch, niz);
-            return (List<Predmet>)GetResult();
-        }
+       
 
         internal List<Ucionica> VratiSveUcionice()
         {
@@ -171,12 +173,7 @@ namespace Client
             return (List<RasporedNastave>)GetResult();
         }
 
-        internal IList<StavkaRasporeda> VratiStavke(RasporedNastave r)
-        {
-            SendRequest(Operation.VratiStavke,r);
-
-            return (List<StavkaRasporeda>)GetResult();
-        }
+       
 
         internal void IzmeniRaspored(RasporedNastave r)
         {
@@ -190,6 +187,13 @@ namespace Client
             SendRequest(Operation.VratiUcioniceNastavnika,n);
 
             return (List<Ucionica>)GetResult();
+        }
+
+        internal List<RasporedNastave> VratiRasporedeNastavnika(Nastavnik n)
+        {
+            SendRequest(Operation.VratiRasporedeNastavnika, n);
+
+            return (List<RasporedNastave>)GetResult();
         }
     }
 }

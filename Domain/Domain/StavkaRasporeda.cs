@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,8 @@ namespace Common
         public string Values => $"{IDRasporeda},{RedniBroj},{Trajanje},'{Datum.ToString("yyyyMMdd")}','{VremePocetka.ToString("hh\\:mm")}','{Predmet.NazivPredmeta}',{Ucionica.BrojUcionice}";
         public string ColName => $"RedniBroj";
         public string Condition => $"idrasporeda={IDRasporeda} and rednibroj={RedniBroj}";
-        public string UpdateValues => $"trajanjeminuti={Trajanje},datum='{Datum.ToString("yyyyMMdd")}',vremepocetka='{VremePocetka.ToString("hh\\:mm")}',nazivpredmeta='{Predmet.NazivPredmeta}',brojucionice={Ucionica.BrojUcionice}";
+        //public string UpdateValues => $"trajanjeminuti={Trajanje},datum='{Datum.ToString("yyyyMMdd")}',vremepocetka='{VremePocetka.ToString("hh\\:mm")}',nazivpredmeta='{Predmet.NazivPredmeta}',brojucionice={Ucionica.BrojUcionice}";
+        public string UpdateValues => $"trajanjeminuti={Trajanje},datum='{Datum.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture)}',vremepocetka='{VremePocetka.ToString("hh\\:mm")}',nazivpredmeta='{Predmet.NazivPredmeta}',brojucionice={Ucionica.BrojUcionice}";
         public override bool Equals(object obj)
         {
             return obj is StavkaRasporeda r && r.Datum==Datum && r.VremePocetka==VremePocetka;

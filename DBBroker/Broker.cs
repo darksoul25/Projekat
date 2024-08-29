@@ -42,35 +42,21 @@ namespace DBBroker
 
         #endregion
 
-        //public Administrator Login(Administrator a)
-        //{
-        //    SqlCommand command = connection.CreateCommand();
-        //    command.CommandText = $"select * from administrator a where a.KorisnickoIme = '{a.KorisnickoIme}' and a.Lozinka='{a.Lozinka}'";
-        //    using (SqlDataReader reader = command.ExecuteReader())
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            a.Ime = reader["Ime"].ToString();
-        //            a.Prezime = reader["Prezime"].ToString();
-        //            return a;
-        //        }
-        //    }
-        //    return null;
-        //}
+ 
 
-        public IEntity LoginII (IEntity obj)
+        public IEntity LoginII(IEntity obj)
         {
             SqlCommand command = connection.CreateCommand();
             command.CommandText = $"select * from {obj.TableName} a where {obj.Condition}";
-            using(SqlDataReader reader = command.ExecuteReader())
+            using (SqlDataReader reader = command.ExecuteReader())
             {
-                
-                    List<IEntity> resList = obj.GetReaderList(reader);
-                    if(resList.Count > 0)
-                    {
-                        return resList[0];
-                    }
-                
+
+                List<IEntity> resList = obj.GetReaderList(reader);
+                if (resList.Count > 0)
+                {
+                    return resList[0];
+                }
+
             }
             command.Dispose();
             return null;
@@ -102,19 +88,35 @@ namespace DBBroker
             {
                 command.CommandText = $"select * from {entity.TableName}";
             }
-            SqlDataReader reader = command.ExecuteReader();
-            List<IEntity> list = entity.GetReaderList(reader);
-            reader.Close();
+            List<IEntity> list;
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                list = entity.GetReaderList(reader);
+
+            }
+
             command.Dispose();
             return list;
         }
-        public List<IEntity> GetAllSearch(IEntity entity, string colName, string text)
+        public List<IEntity> GetAllSearch(IEntity entity, string colName, string text,string joinCondition=null)
         {
             SqlCommand command = connection.CreateCommand();
+            if (!string.IsNullOrEmpty(joinCondition))
+            {
+                command.CommandText = $"select * from {entity.TableName} {joinCondition} where {colName} like '%" + text + "%'";
+            }
+            else
+            {
             command.CommandText = $"select * from {entity.TableName} where {colName} like '%" + text + "%'";
-            SqlDataReader reader = command.ExecuteReader();
-            List<IEntity> list = entity.GetReaderList(reader);
-            reader.Close();
+
+            }
+            List<IEntity> list;
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                list = entity.GetReaderList(reader);
+
+            }
+
             command.Dispose();
             return list;
         }

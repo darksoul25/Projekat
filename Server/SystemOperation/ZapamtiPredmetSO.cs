@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Server.SystemOperation
 {
-    internal class KreirajPredmetSO : SystemOperationBase
+    internal class ZapamtiPredmetSO : SystemOperationBase
     {
         private Predmet p;
-        public KreirajPredmetSO(Predmet p)
+        public ZapamtiPredmetSO(Predmet p)
         {
             this.p = p;
         }

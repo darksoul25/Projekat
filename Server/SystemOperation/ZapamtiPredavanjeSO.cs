@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace Server.SystemOperation
 {
-    public class KreirajNastavnikaSO : SystemOperationBase
+    internal class ZapamtiPredavanjeSO : SystemOperationBase
     {
-        private readonly Nastavnik n;
-        public KreirajNastavnikaSO(Nastavnik n)
+        private Predavanje p;
+        public ZapamtiPredavanjeSO(Predavanje p)
         {
-            this.n = n;
+                this.p = p;
         }
         protected override void ExecuteConcreteOperation()
         {
-            //broker.KreirajNastavnika(n);
-            broker.Add(n);
+            broker.Add(p);
         }
     }
 }

@@ -209,7 +209,7 @@ namespace Client.UCControls
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UCPretraziNastavnike";
-            this.Size = new System.Drawing.Size(656, 580);
+            this.Size = new System.Drawing.Size(950, 781);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNastavnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -249,6 +249,8 @@ namespace Client.UCControls
         public ComboBox CmbColName { get => cmbColName; set => cmbColName = value; }
         public Button BtnSacuvaj { get => btnSacuvaj; set => btnSacuvaj = value; }
         public Button BtnSacuvaj1 { get => btnSacuvaj; set => btnSacuvaj = value; }
+      
+
         //public ComboBox CmbUcionice { get => cmbUcionice; set => cmbUcionice = value; }
     }
 }
